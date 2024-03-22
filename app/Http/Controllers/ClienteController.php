@@ -11,7 +11,7 @@ class ClienteController extends Controller
      */
     public function index()
     {
-        //
+        return view('clientes.index');
     }
 
     /**
@@ -19,7 +19,7 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        //
+        return view('clientes.create');
     }
 
     /**
