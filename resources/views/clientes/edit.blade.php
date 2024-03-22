@@ -13,30 +13,31 @@
         <h1>Cadastro</h1>
         <hr>
 
-        <form action="{{route('clientes.store')}}" method="post">
+        <form action="{{route('clientes.update',['id'=>$clientes->id])}}" method="post">
             @csrf
+            @method('PUT')
             <div class="form-group">
                 <div>
                     <label for="nome">Nome</label>
-                    <input type="text" class="form-control" name="nome" placeholder="Informe o nome">
+                    <input type="text" class="form-control" name="nome" value="{{$clientes->nome}}" placeholder="Informe o nome">
                 </div>
                 <br>
                 <div>
                     <label for="telefone">Telefone</label>
-                    <input type="text" class="form-control" name="telefone" placeholder="Informe o telefone">
+                    <input type="text" class="form-control" name="telefone" value="{{$clientes->telefone}}" placeholder="Informe o telefone">
                 </div>
                 <br>
                 <div>
                     <label for="endereco">Endereço</label>
-                    <input type="text" class="form-control" name="endereco" placeholder="Informe o Endereço">
+                    <input type="text" class="form-control" name="endereco" value="{{$clientes->endereco}}" placeholder="Informe o Endereço">
                 </div>
                 <br>
                 <div>
                     <label for="email">Email</label>
-                    <input type="text" class="form-control" name="email" placeholder="Informe o email">
+                    <input type="text" class="form-control" name="email" value="{{$clientes->email}}" placeholder="Informe o email">
                 </div>
                 <br>
-                <button type="submit" class="btn btn-primary">Cadastrar</button>
+                <input type="submit" name="submit" class="btn btn-primary" value="Atualizar">
 
             </div>
             
